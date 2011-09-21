@@ -1,0 +1,4 @@
+# Ignore (generated) html files,
+nbproject
+.ninjaproject
+*.nja
