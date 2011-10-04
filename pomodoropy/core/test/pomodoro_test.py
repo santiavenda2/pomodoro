@@ -1,8 +1,8 @@
 
 import unittest
 
-import pomodoropy.pomodoro as pomodoro
-import pomodoropy.estados as estados
+import pomodoropy.core.pomodoro as pomodoro
+import pomodoropy.core.estados as estados
 
 
 class Pomodoro_TestCase(unittest.TestCase):
@@ -38,11 +38,13 @@ class Pomodoro_TestCase(unittest.TestCase):
         self.pomodoroTimer.start()
         self.assertEqual(self.pomodoroTimer.get_estado(),
                             estados.ESTADO_TRABAJANDO,
-                            "El timer debe iniciar en estado: %s"%
+                            "El timer debe iniciar en estado: %s" %
                             estados.ESTADO_TRABAJANDO)
         self.pomodoroTimer.avanzar_estado()
-        self.assertEqual(self.pomodoroTimer.get_estado(), estados.ESTADO_DESCANSO_CORTO,
-                            "El segundo estado debe ser %s"%estados.ESTADO_DESCANSO_CORTO)
+        self.assertEqual(self.pomodoroTimer.get_estado(),
+                            estados.ESTADO_DESCANSO_CORTO,
+                            "El segundo estado debe ser %s" \
+                            % estados.ESTADO_DESCANSO_CORTO)
         self.pomodoroTimer.avanzar_estado()
         self.assertEqual(self.pomodoroTimer.get_estado(), estados.ESTADO_TRABAJANDO,
                             "El tercer estado debe ser %s"%estados.ESTADO_TRABAJANDO)

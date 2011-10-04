@@ -1,6 +1,6 @@
 import unittest
 
-import pomodoropy.estados as estados
+import pomodoropy.core.estados as estados
 
 
 class EstadoPomodoro_TestCase(unittest.TestCase):

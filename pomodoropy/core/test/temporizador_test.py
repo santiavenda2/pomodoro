@@ -1,6 +1,6 @@
 import unittest
 
-import pomodoropy.temporizador as temp
+import pomodoropy.core.temporizador as temp
 import timeit
 
 
