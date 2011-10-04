@@ -28,6 +28,16 @@ def example(fn):
 
 
 @example
+def examplePomodoro():
+    pbar = ProgressBar(widgets=["Estado: ", Percentage(),
+            Bar(marker='=', left='[', right=']'), Timer()], maxval=100).start()
+    for i in range(100):
+        time.sleep(0.1)
+        pbar.update(i + 1)
+    pbar.finish()
+
+
+@example
 def example0():
     pbar = ProgressBar(widgets=[Percentage(), Bar()], maxval=300).start()
     for i in range(300):

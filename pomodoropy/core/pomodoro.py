@@ -49,7 +49,6 @@ class ProcesoPomodoro():
 class ControladorPomodoro(object):
 
     def __init__(self):
-        self._temporizador = Temporizador()
         self._proceso = ProcesoPomodoro()
 
     def iniciar_pomodoro(self):
@@ -62,6 +61,7 @@ class ControladorPomodoro(object):
 
     def _lanzar_temporizador(self):
         estado_actual = self._proceso.get_estado()
+        self._temporizador = Temporizador(estado_actual.get_nombre())
         self._temporizador.set_duracion(estado_actual.get_duracion())
         self._temporizador.iniciar_cuenta_regresiva()
 
