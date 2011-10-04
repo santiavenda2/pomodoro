@@ -1,54 +1,35 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-#!/usr/bin/env python2.6
+#!/usr/bin/env python2.7
 __author__="santiago"
 __date__ ="$16/09/2011 01:03:11$"
 
-NOMBRE_ESTADO_TRABAJANDO = "trabajando"
-NOMBRE_ESTADO_DESCANSO_CORTO = "descanso corto"
-NOMBRE_ESTADO_DESCANSO_LARGO = "descanso largo"
-NOMBRE_ESTADO_PARADO = "Parado"
-DURACION_ESTADO_PARADO = float('inf')
-DURACION_ESTADO_TRABAJANDO = 25.0
-DURACION_ESTADO_DESCANSO_CORTO = 5.0
-DURACION_ESTADO_DESCANSO_LARGO = 30.0
-
-
 class EstadoPomodoro(object):
+    """
+    Clase que representa un estado de Pomodoro
+    """
 
-    pass
+    def __init__(self, nombre, duracion):
+        self._nombre = nombre
+        self._duracion = duracion
 
-class EstadoPomodoroParado(EstadoPomodoro):
+    def get_nombre(self):
+        return self._nombre
 
-    def getNombre(self):
-        return NOMBRE_ESTADO_PARADO
+    def get_duracion(self):
+        return self._duracion
 
-    def getDuracion(self):
-        return DURACION_ESTADO_PARADO
+    def __str__(self):
+        return self.get_nombre()
 
-class EstadoPomodoroTrabajando(EstadoPomodoro):
+# Estados definidos
+ESTADO_PARADO = EstadoPomodoro("Parado", float('inf') )
+ESTADO_TRABAJANDO = EstadoPomodoro("Trabajando", 25 )
+ESTADO_DESCANSO_CORTO = EstadoPomodoro("Descanso corto",5 )
+ESTADO_DESCANSO_LARGO = EstadoPomodoro("Descanso largo", 30 )
 
-    def getNombre(self):
-        return NOMBRE_ESTADO_TRABAJANDO
-
-    def getDuracion(self):
-        return DURACION_ESTADO_TRABAJANDO
-
-class EstadoPomodoroDescansoCorto(EstadoPomodoro):
-
-    def getNombre(self):
-        return NOMBRE_ESTADO_DESCANSO_CORTO
-
-    def getDuracion(self):
-        return DURACION_ESTADO_DESCANSO_CORTO
-
-class EstadoPomodoroDescansoLargo(EstadoPomodoro):
-
-    def getNombre(self):
-        return NOMBRE_ESTADO_DESCANSO_LARGO
-
-    def getDuracion(self):
-        return DURACION_ESTADO_DESCANSO_LARGO
-    
+ESTADOS_DEFINIDOS = [ESTADO_PARADO, ESTADO_TRABAJANDO,
+                    ESTADO_DESCANSO_CORTO, ESTADO_DESCANSO_LARGO]
 if __name__ == "__main__":
-    print "Hello World"
+    print "Estados definidos: "
+    for estado in ESTADOS_DEFINIDOS:
+        print estado.get_nombre()
+
