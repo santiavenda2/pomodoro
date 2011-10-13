@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file>resources/reinhardticons-0.10-svg/16x16/actions/run.png</file>
+    <file>resources/icon.jpg</file>
+  </qresource>
+</RCC>
