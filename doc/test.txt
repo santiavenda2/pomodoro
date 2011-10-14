@@ -1,0 +1,7 @@
+- Problemas de Organizacion: definir una estructura de directorios para test 
+	y como debe ser importado el codigo a testear en los mismos.
+- Que testear: todo?
+- Cosa que me gusto: los test permitieron hacer un refactor que mejoro 
+	notablemente el codigo. Además implementar solo lo esencial.
+
+- Test con gui. Todavia no encontre la forma de testear desde PyQT
